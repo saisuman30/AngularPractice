@@ -1,4 +1,5 @@
-<table border="solid 1px">
+<table>
+    <th attr.colspan="{{colspan}}">Employee Details</th>
     <tr>
         <td>Name</td>
         <td>{{getFullName()}}</td>
@@ -17,3 +18,11 @@
 <img [src]="imagePath"/>
 <br/>
 <button [disabled]="isDisabled">Click me</button>
+<br/>
+<button class="ColorClass" [class]="classesToApply">Button1</button>
+<br/>
+<button class="ColorClass" [class.BoldClass]="applyBoldClass">Button2</button>
+<br>
+<button class="ColorClass" [ngClass]="AddClasses()">Button3</button>
+<br>
+<button style="color:green" [style.font-weight]="isBold?'bold':'normal'">Button4</button>

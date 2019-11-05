@@ -19,6 +19,7 @@ export class EmployeeComponent{
     applyBoldClass:boolean=true;
     applyItalicClass: boolean=false;
     isBold:boolean=true;
+    ShowDetails:boolean=false;
     getFullName():string{
         return this.firstName+this.lastName;
     }   
@@ -31,5 +32,12 @@ export class EmployeeComponent{
         return classes;
     }
 
+    onClickMe():void{
+        console.log('Button Clicked');
+    this.isDisabled=!this.isDisabled;
+    }
 
+    ToggleShowDetails():void{
+this.ShowDetails=!this.ShowDetails;
+    }
 }

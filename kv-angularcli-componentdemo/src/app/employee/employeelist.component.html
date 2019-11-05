@@ -1,0 +1,33 @@
+<table>
+    <thead>
+        <tr>
+           
+             <th>Id</th>
+              <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Index</th>
+            <th>IsFirst</th>
+            <th>IsLast</th>
+                        <th>IsEven</th>
+            <th>IsOdd</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let employee of employees;trackBy:trackEmployeeById;let i=index;let isFirst=first;let isLast=last;let isEven=even;let isOdd=odd'>
+             <td>{{employee.Id}}</td>
+            <td>{{employee.firstName}}</td>
+            <td>{{employee.Gender}}</td>
+            <td>{{employee.Age}}</td>
+            <td>{{employee.Salary}}</td>
+            <td>{{i}}</td>  
+            <td>{{isFirst}}</td>
+                <td>{{isLast}}</td>
+                    <td>{{isEven}}</td>
+                <td>{{isOdd}}</td>
+        </tr>
+    </tbody>
+</table>
+<br/>
+<button on-click='RefreshEmployees()'>RefreshEmployees</button>

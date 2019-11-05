@@ -5,19 +5,29 @@
         <td>{{getFullName()}}</td>
     </tr>
    
-    <tr>
+    <tr *ngIf='ShowDetails'>
         <td>Gender</td>
         <td>{{gender}}</td>
     </tr>
-    <tr>
+    <tr *ngIf='ShowDetails'>
         <td>Age</td>
         <td>{{age}}</td>
     </tr>
 </table>
 <br/>
-<img [src]="imagePath"/>
+<img *ngIf='ShowDetails' [src]="imagePath"/>
 <br/>
-<button [disabled]="isDisabled">Click me</button>
+<br/>
+<button  on-click='ToggleShowDetails()'>{{ShowDetails?'Hide':'Show'}} Details</button>
+<br/>
+<br/>
+<!-- <input [value]='firstName' (input)='firstName=$event.target.value'> -->
+<input [(ngModel)]='firstName'/>
+<br/>
+<h1>you entered {{firstName}}</h1>
+<br/>
+<my-employeelist></my-employeelist>
+<!-- <button [disabled]="isDisabled" on-click='onClickMe()'>Click me</button>
 <br/>
 <button class="ColorClass" [class]="classesToApply">Button1</button>
 <br/>
@@ -25,4 +35,4 @@
 <br>
 <button class="ColorClass" [ngClass]="AddClasses()">Button3</button>
 <br>
-<button style="color:green" [style.font-weight]="isBold?'bold':'normal'">Button4</button>
+<button style="color:green" [style.font-weight]="isBold?'bold':'normal'">Button4</button> -->

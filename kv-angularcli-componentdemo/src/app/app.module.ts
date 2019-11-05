@@ -6,12 +6,13 @@ import { AppComponent } from './app.component';
 
 import {EmployeeComponent} from './employee/employee.component';
 import {EmployeeListComponent} from './employee/employeelist.component';
+import {EmployeeCountComponent} from './employee/employeeCount.component';
 
 import {EmployeeTitlePipe} from './employee/employeetitle.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent,EmployeeComponent,EmployeeListComponent,EmployeeTitlePipe
+    AppComponent,EmployeeComponent,EmployeeListComponent,EmployeeTitlePipe,EmployeeCountComponent
     
   ],
   imports: [

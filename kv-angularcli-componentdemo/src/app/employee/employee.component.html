@@ -1,5 +1,5 @@
 <table>
-    <th attr.colspan="{{colspan}}">Employee Details</th>
+    <!-- <th attr.colspan="{{colspan}}">Employee Details</th>
     <tr>
         <td>Name</td>
         <td>{{getFullName()}}</td>
@@ -21,11 +21,11 @@
 <button  on-click='ToggleShowDetails()'>{{ShowDetails?'Hide':'Show'}} Details</button>
 <br/>
 <br/>
-<!-- <input [value]='firstName' (input)='firstName=$event.target.value'> -->
-<input [(ngModel)]='firstName'/>
+ <input [value]='firstName' (input)='firstName=$event.target.value'> -->
+<!-- <input [(ngModel)]='firstName'/>
 <br/>
 <h1>you entered {{firstName}}</h1>
-<br/>
+<br/> -->
 <my-employeelist></my-employeelist>
 <!-- <button [disabled]="isDisabled" on-click='onClickMe()'>Click me</button>
 <br/>

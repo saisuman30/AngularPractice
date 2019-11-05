@@ -1,3 +1,6 @@
+<my-employeecount></my-employeecount>
+<br/>
+<br/>
 <table>
     <thead>
         <tr>
@@ -7,27 +10,28 @@
             <th>Gender</th>
             <th>Age</th>
             <th>Salary</th>
-            <th>Index</th>
+            <!-- <th>Index</th>
             <th>IsFirst</th>
             <th>IsLast</th>
                         <th>IsEven</th>
-            <th>IsOdd</th>
+            <th>IsOdd</th> -->
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor='let employee of employees;trackBy:trackEmployeeById;let i=index;let isFirst=first;let isLast=last;let isEven=even;let isOdd=odd'>
+        <!-- <tr *ngFor='let employee of employees;trackBy:trackEmployeeById;let i=index;let isFirst=first;let isLast=last;let isEven=even;let isOdd=odd'> -->
+                <tr *ngFor='let employee of employees;'>
              <td>{{employee.Id}}</td>
             <td>{{employee.firstName|employeeTitle:employee.Gender}}</td>
             <td>{{employee.Gender}}</td>
             <td>{{employee.Age}}</td>
             <td>{{employee.Salary|currency:'INR':true:'1.1-2'}}</td>
-            <td>{{i}}</td>  
+            <!-- <td>{{i}}</td>  
             <td>{{isFirst}}</td>
                 <td>{{isLast}}</td>
                     <td>{{isEven}}</td>
-                <td>{{isOdd}}</td>
+                <td>{{isOdd}}</td> -->
         </tr>
     </tbody>
 </table>
 <br/>
-<button on-click='RefreshEmployees()'>RefreshEmployees</button>
+<!-- <button on-click='RefreshEmployees()'>RefreshEmployees</button> -->

@@ -7,9 +7,11 @@ import { AppComponent } from './app.component';
 import {EmployeeComponent} from './employee/employee.component';
 import {EmployeeListComponent} from './employee/employeelist.component';
 
+import {EmployeeTitlePipe} from './employee/employeetitle.pipe';
+
 @NgModule({
   declarations: [
-    AppComponent,EmployeeComponent,EmployeeListComponent
+    AppComponent,EmployeeComponent,EmployeeListComponent,EmployeeTitlePipe
     
   ],
   imports: [

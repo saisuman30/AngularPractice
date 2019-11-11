@@ -1,4 +1,6 @@
-<my-employeecount></my-employeecount>
+<my-employeecount [all]="GetTotalEmployeeCount()" [male]="GetTotalMaleEmployeeCount()" [female]="GetTotalFemaleEmployeeCount()"
+(countRadioButtonSelectedChanged)="onEmployeeCountRadioButtonChanged($event)"
+></my-employeecount>
 <br/>
 <br/>
 <table>
@@ -18,8 +20,9 @@
         </tr>
     </thead>
     <tbody>
+        <ng-container  *ngFor='let employee of employees;'>
         <!-- <tr *ngFor='let employee of employees;trackBy:trackEmployeeById;let i=index;let isFirst=first;let isLast=last;let isEven=even;let isOdd=odd'> -->
-                <tr *ngFor='let employee of employees;'>
+                <tr  *ngIf="selectedEmployeeCountRadioButton=='All'|| selectedEmployeeCountRadioButton==employee.Gender">
              <td>{{employee.Id}}</td>
             <td>{{employee.firstName|employeeTitle:employee.Gender}}</td>
             <td>{{employee.Gender}}</td>
@@ -31,6 +34,7 @@
                     <td>{{isEven}}</td>
                 <td>{{isOdd}}</td> -->
         </tr>
+    </ng-container>
     </tbody>
 </table>
 <br/>

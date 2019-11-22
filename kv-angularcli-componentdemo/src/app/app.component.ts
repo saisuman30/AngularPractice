@@ -4,12 +4,19 @@ import {Component} from '@angular/core';
 
 @Component({
   selector:'my-app',
+  template: `<div style="padding:5px">
+              <ul class="nav nav-tabs">
+              <li><a routerLink="home">Home</a></li>
+              <li><a routerLink="employees">Employees</a></li>
+              </ul>
+              <router-outlet></router-outlet>
+              </div>`
   // template:`Your Text : <input type="text" [(ngModel)]="userSimpleText"/>
   // <br/>
   // <br/>
   // <simple [simpleInput]='userSimpleText'></simple>`
-  templateUrl:'./app.component.html',
-  styleUrls:['./app.component.css']
+  //templateUrl:'./app.component.html',
+  //styleUrls:['./app.component.css']
 })
 
 export class AppComponent{

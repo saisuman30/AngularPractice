@@ -1,4 +1,4 @@
-<my-employeecount [all]="GetTotalEmployeeCount()" [male]="GetTotalMaleEmployeeCount()" [female]="GetTotalFemaleEmployeeCount()"
+<my-employeecount *ngIf="employees" [all]="GetTotalEmployeeCount()" [male]="GetTotalMaleEmployeeCount()" [female]="GetTotalFemaleEmployeeCount()"
 (countRadioButtonSelectedChanged)="onEmployeeCountRadioButtonChanged($event)"
 ></my-employeecount>
 <br/>
@@ -22,12 +22,12 @@
     <tbody>
         <ng-container  *ngFor='let employee of employees;'>
         <!-- <tr *ngFor='let employee of employees;trackBy:trackEmployeeById;let i=index;let isFirst=first;let isLast=last;let isEven=even;let isOdd=odd'> -->
-                <tr  *ngIf="selectedEmployeeCountRadioButton=='All'|| selectedEmployeeCountRadioButton==employee.Gender">
-             <td>{{employee.Id}}</td>
-            <td>{{employee.firstName|employeeTitle:employee.Gender}}</td>
-            <td>{{employee.Gender}}</td>
-            <td>{{employee.Age}}</td>
-            <td>{{employee.Salary|currency:'INR':true:'1.1-2'}}</td>
+                <tr  *ngIf="selectedEmployeeCountRadioButton=='All'|| selectedEmployeeCountRadioButton==employee.gender">
+             <td>{{employee.id}}</td>
+            <td>{{employee.firstName|employeeTitle:employee.gender}}</td>
+            <td>{{employee.gender}}</td>
+            <td>{{employee.age}}</td>
+            <td>{{employee.salary|currency:'INR':true:'1.1-2'}}</td>
             <!-- <td>{{i}}</td>  
             <td>{{isFirst}}</td>
                 <td>{{isLast}}</td>
@@ -35,6 +35,13 @@
                 <td>{{isOdd}}</td> -->
         </tr>
     </ng-container>
+    <tr *ngIf="!employees">
+        <td colspan="5">{{statusMesage}}</td>
+            </tr>
+    <tr *ngIf="employees && employees.length==0">
+<td colspan="5">No Employees to Display.</td>
+    </tr>
+
     </tbody>
 </table>
 <br/>

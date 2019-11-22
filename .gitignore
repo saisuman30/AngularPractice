@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/EmployeeAPI/.vs/EmployeeAPI/v16/Server/sqlite3
+/EmployeeAPI/.vs/EmployeeAPI
+/EmployeeAPI/EmployeeAPI/bin/Debug/netcoreapp3.0
+/EmployeeAPI/EmployeeAPI/obj

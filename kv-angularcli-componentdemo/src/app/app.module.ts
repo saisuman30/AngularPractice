@@ -10,14 +10,16 @@ import {EmployeeCountComponent} from './employee/employeeCount.component';
 
 import {SimpleComponent} from './others/simple.component';
 import {EmployeeTitlePipe} from './employee/employeetitle.pipe';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
-    AppComponent,EmployeeComponent,EmployeeListComponent,EmployeeTitlePipe,EmployeeCountComponent,SimpleComponent
+    AppComponent,EmployeeComponent,EmployeeListComponent,
+    EmployeeTitlePipe,EmployeeCountComponent,SimpleComponent
     
   ],
   imports: [
-    BrowserModule,FormsModule
+    BrowserModule,FormsModule,HttpModule
   ],
   bootstrap: [AppComponent]
 })

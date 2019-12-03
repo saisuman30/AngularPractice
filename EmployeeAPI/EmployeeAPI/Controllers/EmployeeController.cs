@@ -8,10 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class EmployeeController : ControllerBase
     {
+        [HttpGet]
         public List<Employee> GetEmployees()
         {
             var employees = new List<Employee>();
@@ -25,6 +26,13 @@ namespace EmployeeAPI.Controllers
 
             return employees;
 
+        }
+
+        [HttpGet("{Id}")]
+        public Employee GetEmployeeDetails(int Id)
+        {
+            var employees = GetEmployees();
+            return employees.FirstOrDefault(x => x.Id == Id);
         }
     }
 }

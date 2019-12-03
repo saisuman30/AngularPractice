@@ -5,8 +5,8 @@ import { EmployeeDetailsService } from './EmployeeDetails.service';
 @Component({
     selector: 'my-employeelist',
     templateUrl: './employeelist.component.html',
-    styleUrls: ['./employeelist.component.css'],
-    providers:[EmployeeDetailsService]
+    styleUrls: ['./employeelist.component.css']
+    
 })
 
 export class EmployeeListComponent  {

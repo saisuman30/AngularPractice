@@ -23,7 +23,10 @@
         <ng-container  *ngFor='let employee of employees;'>
         <!-- <tr *ngFor='let employee of employees;trackBy:trackEmployeeById;let i=index;let isFirst=first;let isLast=last;let isEven=even;let isOdd=odd'> -->
                 <tr  *ngIf="selectedEmployeeCountRadioButton=='All'|| selectedEmployeeCountRadioButton==employee.gender">
-             <td>{{employee.id}}</td>
+             <td><a [routerLink]="['/employees',employee.id]">
+                {{employee.id}}
+             </a>
+                 </td>
             <td>{{employee.firstName|employeeTitle:employee.gender}}</td>
             <td>{{employee.gender}}</td>
             <td>{{employee.age}}</td>

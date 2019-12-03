@@ -19,8 +19,16 @@ export class EmployeeDetailsService {
   }
 
   getEmployees(): Observable<Employee[]> {
-    return this._http.get('https://localhost:44346/api/Employee').pipe(
+    return this._http.get('https://localhost:44346/api/Employee/GetEmployees').pipe(
       map((res:Response) =><Employee[]> res.json(),retry(1)),catchError(this.handleError)
+      );
+
+    
+  }
+
+  getEmployeeById(Id:number): Observable<Employee> {
+    return this._http.get('https://localhost:44346/api/Employee/GetEmployeeDetails/'+Id).pipe(
+      map((res:Response) =><Employee> res.json(),retry(1)),catchError(this.handleError)
       );
 
     

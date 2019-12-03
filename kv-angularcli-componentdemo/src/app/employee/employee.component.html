@@ -1,4 +1,39 @@
-<table>
+<table *ngIf="employee">
+    <thead>
+        <tr>
+            <th colspan="2">
+                Employee Details
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Employee Id</td>
+            <td>  {{employee.id}}  </td>
+        </tr>
+        <tr>
+                <td>Name</td>
+                <td>  {{employee.firstName}}  </td>
+            </tr>
+            <tr>
+                    <td>Gender</td>
+                    <td>  {{employee.gender}}  </td>
+                </tr>
+                <tr>
+                        <td>Salary</td>
+                        <td>  {{employee.salary}}  </td>
+                    </tr>
+                    <tr>
+                            <td>Age</td>
+                            <td>  {{employee.age}}  </td>
+                        </tr>
+                       
+    </tbody>
+</table>
+<div *ngIf="!employee">
+    {{statusMessage}}
+
+</div>
     <!-- <th attr.colspan="{{colspan}}">Employee Details</th>
     <tr>
         <td>Name</td>
@@ -26,7 +61,7 @@
 <br/>
 <h1>you entered {{firstName}}</h1>
 <br/> -->
-<my-employeelist></my-employeelist>
+<!-- <my-employeelist></my-employeelist> -->
 <!-- <button [disabled]="isDisabled" on-click='onClickMe()'>Click me</button>
 <br/>
 <button class="ColorClass" [class]="classesToApply">Button1</button>
